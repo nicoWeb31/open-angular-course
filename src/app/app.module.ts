@@ -6,9 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyFirstComponent } from './my-first/my-first.component';
 import { AppareilComponent } from './appareil/appareil.component';
-import { AppService } from './app.service';
+import { AppService } from './service/app.service';
 import { AuthComponent } from './auth/auth.component';
 import { AppViewComponent } from './app-view/app-view.component';
+import { Routes, RouterModule } from '@angular/router';
+import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
+
+// const appRoutes: Routes = [
+//   {path : 'appareil', component:AppViewComponent},
+//   {path : 'auth', component: AuthComponent},
+//   {path: '', component:AppViewComponent}
+// ]
 
 
 @NgModule({
@@ -17,12 +25,14 @@ import { AppViewComponent } from './app-view/app-view.component';
     MyFirstComponent,
     AppareilComponent,
     AuthComponent,
-    AppViewComponent
+    AppViewComponent,
+    SingleAppareilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    // RouterModule.forRoot(appRoutes)
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
