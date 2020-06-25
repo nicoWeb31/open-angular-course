@@ -1,3 +1,5 @@
 <li class="groupe item">
     <h4>Appareil : {{appareilName}}  -- status : {{ getStatus() }}</h4>
+    <!-- ng model liaison a double sens -->
+    <input class="fprm-control" [(ngModel)]="appareilName">
 </li>

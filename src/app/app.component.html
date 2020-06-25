@@ -2,13 +2,19 @@
 <div class="row">
   <div class="col-xs-12">
     <h2>Mes appareils</h2>
-    <ul class="list-group">
-      <app-appareil></app-appareil>
-      <app-appareil></app-appareil>
-      <app-appareil></app-appareil>
-      <app-appareil ></app-appareil>
+    <ul class="list-group" *ngFor="let appareil of appareilNa">
+
+      <!--  [appareilName] du composant app-appareil -------  appareil of appareilNa du component dans lequel on est    -->
+
+      <app-appareil [appareilName]= "appareil.name"  [appareilStatue]="appareil.status"></app-appareil>
+
+
+      <!-- <app-appareil [appareilName]= "appareilNa"></app-appareil>
+      <app-appareil [appareilName]= "'machine a coudre'"></app-appareil>
+      <app-appareil [appareilName]= "'machine a laver '"></app-appareil> -->
+
     </ul>
-    <button class="btn btn-success" [disabled]="!isAuth" > tout allumer</button>
+    <button class="btn btn-success" [disabled]="!isAuth" (click)="onSubmit()" > tout allumer</button>
   </div>
 </div>
 </div>
