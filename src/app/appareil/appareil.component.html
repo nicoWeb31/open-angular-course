@@ -1,5 +1,18 @@
-<li class="groupe item">
-    <h4>Appareil : {{appareilName}}  -- status : {{ getStatus() }}</h4>
+<li [ngClass]="{'list-group-item': true, 'p-4':true ,
+'list-group-item-success' : appareilStatue === 'alumer',
+'list-group-item-danger' : appareilStatue === 'eteint'
+}">
+
+    <!-- <div
+        style="width:20px;height:20px;background-color:red;" *ngIf=" appareilStatue === 'eteint' ">
+    </div>
+    <div
+        style="width:20px;height:20px;background-color:green;" *ngIf=" appareilStatue === 'alumer' ">
+    </div> -->
+
+
+
+    <h4 [ngStyle]="{'color': getColor()}" >Appareil : {{appareilName}}  -- status : {{ getStatus() }}</h4>
     <!-- ng model liaison a double sens -->
     <input class="fprm-control" [(ngModel)]="appareilName">
 </li>

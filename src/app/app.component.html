@@ -6,12 +6,13 @@
 
       <!--  [appareilName] du composant app-appareil -------  appareil of appareilNa du component dans lequel on est    -->
 
-      <app-appareil [appareilName]= "appareil.name"  [appareilStatue]="appareil.status"></app-appareil>
+      <app-appareil [appareilName]= "appareil.name" [appareilStatue]="appareil.status"></app-appareil>
 
 
       <!-- <app-appareil [appareilName]= "appareilNa"></app-appareil>
       <app-appareil [appareilName]= "'machine a coudre'"></app-appareil>
       <app-appareil [appareilName]= "'machine a laver '"></app-appareil> -->
+
 
     </ul>
     <button class="btn btn-success" [disabled]="!isAuth" (click)="onSubmit()" > tout allumer</button>
