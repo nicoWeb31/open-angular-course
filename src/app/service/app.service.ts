@@ -7,20 +7,37 @@ export class AppService {
 
   appareilNa = [
     {
-      'name':'machine a laver',
-      'status':'alumer'
+      id:1,
+      name:'machine a laver',
+      status:'alumer'
     },
     {
-      'name':'frigo',
-      'status':'alumer'
+      id:2,
+      name:'frigo',
+      status:'alumer'
     },
     {
-      'name':'television',
-      'status':'eteint'
+      id:3,
+      name:'television',
+      status:'eteint'
     }
   ]
 
   constructor() { }
+
+
+  //get by id
+  getAppById(id: number){
+
+    let appreil = this.appareilNa.find(
+      (appareilObject)=>{
+      console.log("AppService -> getAppById -> appareilObject", appareilObject)
+        return appareilObject.id === id
+      }
+    );
+    return appreil
+
+  }
 
 
 
