@@ -1,47 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
-
-
-  lastUpdate = new Promise((resolve,reject)=>{
-    const date = new Date();
-    setTimeout(()=>{
-      resolve(date)
-    },2000)
-  });
-  isAuth: boolean = false;
-  title = 'Toto';
-  appareilNa = [
-    {
-      'name':'machine a laver',
-      'status':'alumer'
-    },
-    {
-      'name':'frigo',
-      'status':'alumer'
-    },
-    {
-      'name':'television',
-      'status':'eteint'
-    }
-  ]
-
-  constructor(){
-
-    setTimeout(()=>{this.isAuth=true},4000)
-
-
+  ngOnInit(){
+    
   }
 
-  onSubmit(){
-    console.log('tout alumer')
-  }
 
+  
 
 }

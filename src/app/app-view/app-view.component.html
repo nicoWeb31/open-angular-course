@@ -1,0 +1,34 @@
+<div class=" container ">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Mes appareils</h2>
+    
+        <!-- pipe date   'short ' ex ... voir la doc   et chainage de pipe-->
+        <p> mise a jour : {{ lastUpdate | async | date | uppercase  }}</p>
+    
+    
+        <ul class="list-group" *ngFor="let appareil of appareilNa; let i = index">
+    
+          <!--  [appareilName] du composant app-appareil -------  appareil of appareilNa du component dans lequel on est    -->
+    
+          <app-appareil 
+          [appareilId] = "i"
+          [appareilName]= "appareil.name" 
+          [appareilStatue]="appareil.status"
+          >
+    
+          </app-appareil>
+    
+    
+          <!-- <app-appareil [appareilName]= "appareilNa"></app-appareil>
+          <app-appareil [appareilName]= "'machine a coudre'"></app-appareil>
+          <app-appareil [appareilName]= "'machine a laver '"></app-appareil> -->
+    
+    
+        </ul>
+        <button class="btn btn-success" [disabled]="!isAuth" (click)="onSubmitOn()" > tout allumer </button>
+        <button class="btn btn-warning" [disabled]="!isAuth" (click)="onSubmitOff()" > tout eteindre </button>
+    
+      </div>
+    </div>
+    </div>
