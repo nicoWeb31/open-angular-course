@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 
+
+  lastUpdate = new Promise((resolve,reject)=>{
+    const date = new Date();
+    setTimeout(()=>{
+      resolve(date)
+    },2000)
+  });
   isAuth: boolean = false;
   title = 'Toto';
   appareilNa = [

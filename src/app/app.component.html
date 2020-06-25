@@ -2,6 +2,11 @@
 <div class="row">
   <div class="col-xs-12">
     <h2>Mes appareils</h2>
+
+    <!-- pipe date   'short ' ex ... voir la doc   et chainage de pipe-->
+    <p> mise a jour : {{ lastUpdate | async | date | uppercase  }}</p>
+
+
     <ul class="list-group" *ngFor="let appareil of appareilNa">
 
       <!--  [appareilName] du composant app-appareil -------  appareil of appareilNa du component dans lequel on est    -->
