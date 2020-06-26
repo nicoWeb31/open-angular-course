@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../service/app.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class AppViewComponent implements OnInit {
   isAuth: boolean = false;
   title = 'Toto';
   appareilNa: any[];
+  appSubscrion: Subscription
 
 
   constructor(
@@ -28,9 +30,12 @@ export class AppViewComponent implements OnInit {
 
   ngOnInit(){
     
-    this.appareilNa = this.appServ.appareilNa
-    console.log("AppComponent -> ngOnInit -> this.appServ.appareilNa", this.appServ.appareilNa)
-    
+    this.appServ.appSubject.subscribe((appareils: any[])=>{
+      this.appareilNa = appareils 
+
+    })
+
+    this.appServ.EmitAppSubject();
   }
 
 
