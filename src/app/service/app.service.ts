@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
 
-  appareilNa = [
+
+
+  appSubject = new Subject<any[]>()
+
+  private appareilNa = [
     {
       id:1,
       name:'machine a laver',
@@ -23,7 +29,16 @@ export class AppService {
     }
   ]
 
+
   constructor() { }
+
+
+  EmitAppSubject(){
+    //slice copie du tableau
+    this.appSubject.next(this.appareilNa.slice())
+  }
+
+
 
 
   //get by id
@@ -56,8 +71,9 @@ export class AppService {
 switchOffAll(){
 
   for(let appereil of this.appareilNa){
-    appereil.status = 'eteint'
+    appereil.status = 'eteint';
   }
+  this.EmitAppSubject();
 }
 
 
