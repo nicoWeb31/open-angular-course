@@ -12,6 +12,7 @@ import { AppViewComponent } from './app-view/app-view.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+// import { AuthGardService } from './service/auth-gard.service';
 
 // const appRoutes: Routes = [
 //   {path : 'appareil', component:AppViewComponent},
@@ -36,7 +37,8 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
     FormsModule,
     // RouterModule.forRoot(appRoutes)
   ],
-  providers: [AppService],
+  providers: [AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
